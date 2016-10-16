@@ -15,21 +15,29 @@
   </head>
   
   
-  <body ng-app="calc" ng-controller="calc">
-    <h1><%= title %></h1>
-    <div class="container">
-     <input id="num1" ng-model="num1">
-    
-    	<input ng-model="operation">
-   				 
-		
-	
-    <input id="num2" ng-model="num2" >
-    
-	<input type="submit" value="calculate" ng-click="calculate();">
-	<br>
-	{{result}}
    
+  <body ng-app="calc" ng-controller="calc" class="container">
+   
+    <div class="container" style="border: 1px solid">
+      <h1>Welcome to <%= title %></h1><br><br><br>
+    <div class="row">
+      <div class="col-lg-3"></div>
+       <div class="col-lg-6">
+
+     <input id="num1" ng-model="num1" placeholder="Enter first operand" required> <br><br><br>
+    
+    	<button class="btn btn-primary" ng-click="operation('+');">+</button>
+    	<button class="btn btn-primary" ng-click="operation('-');">-</button>
+    	<button class="btn btn-primary" ng-click="operation('*');">*</button>
+    	<button class="btn btn-primary" ng-click="operation('/');">/</button> <br><br><br>
+   				 
+	    <input id="num2" ng-model="num2" placeholder="Enter first operand" required><br><br><br>
+    
+		<input type="submit" value="calculate" ng-click="calculate();"><br><br><br>
+	<h1>Output : {{result}}</h1>
+   </div>
+
+   <div class="col-lg-3"></div>
     
   </body>
 </html>

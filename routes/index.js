@@ -6,8 +6,6 @@ router.get('/', function(req, res, next) {
 	  res.render('index', { title: 'Calculator' });
 	});
 
-
-
 router.post('/calc', function(req, res, next) {
 	
 	console.log("inside function");
@@ -47,6 +45,12 @@ router.post('/calc', function(req, res, next) {
 		
 		}
 		console.log("node : " + result);
+		
+		/*if(result == Infinity){
+			
+		}*/
+		
+		
 		res.send({"result" : result});
 	}	
 });

@@ -3,6 +3,11 @@ var app = angular.module('calc',[]);
 
 app.controller('calc',function($scope,$http){
 	
+	  var operation;
+	  $scope.operation = function(x){
+	    operation = x;
+	  }
+
 	$scope.calculate= function(){
 		
 		$http({			
@@ -12,11 +17,16 @@ app.controller('calc',function($scope,$http){
 				
 				"num1" : $scope.num1,
 				"num2" : $scope.num2,
-				"operation" : $scope.operation
+				"operation" : operation
 			}		
 		}).success(function(data){
 			console.log(data.result);
-			$scope.result = data.result;
+			if(data.result == null || data.result == undefined){
+				$scope.result = "Correct your inputs!";
+			}else{
+				$scope.result = data.result;
+			}
+			
 			
 		}).error(function(error){
 			console.log(data.msg);
@@ -24,8 +34,5 @@ app.controller('calc',function($scope,$http){
 			
 		});
 	}
-		
-	
-	
-	
+			
 })
