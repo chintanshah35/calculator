@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/calc', function(req, res, next) {
 	
-	console.log("inside function");
+//	console.log("inside function");
 	var temp1 = req.body.num1;
 //	var num1 = req.param('num1');
 	var temp2 = req.body.num2;
